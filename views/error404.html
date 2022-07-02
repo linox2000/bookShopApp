@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Page Not Found</title>
+    <style>
+        body{
+          margin: 0;
+          padding: 0;
+          font-family: sans-serif;
+        }
+        .main-header{
+          width: 100%;
+          height: 3.5rem;
+          background-color: rgb(182, 161, 27);
+          padding: 0 1.5rem;
+        }
+        .main-header__nav{
+          height: 100%;
+          display: flex;
+          align-items: center;
+        }
+        .main-header__item-list{
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+        }
+        .main-header__item{
+          margin: 0 1rem;
+          padding: 0;
+        }
+        .main-header__item a{
+          text-decoration: none;
+          color: #111;
+        }
+        .main-header__item a:hover,
+        .main-header__item a:active,
+        .main-header__item a.active{
+          color: rgb(10, 49, 116);
+        }
+        main{
+          padding: 3rem;
+        }
+     
+  
+      </style>
+</head>
+<header class="main-header">
+    <nav class="main-header__nav">
+      <ul class="main-header__item-list">
+        <li class="main-header__item">
+          <a class="active" href="/">Shop</a>
+        </li>
+        <li class="main-header__item">
+          <a  href="/admin/add-product">Add Product</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+<body>
+    <h1>Page Not Found</h1>
+</body>
+</html>

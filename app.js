@@ -1,20 +1,26 @@
 const express = require("express");
+
+const path = require('path')
+
+const adminRoutes = require('./routes/admin')
+
+const shopRoutes = require('./routes/shop')
+
 const bodyParser =require('body-parser')
 
 const app = express();
 
 app.use(bodyParser.urlencoded({extended:false}))
+app.use(express.static(path.join(__dirname,'public')))
 
-app.use("/add-product", (req, res, next) => {
-  res.send('<form action="/product"method="POST"><input type="text"name="title"><button>Add Product</button</form>');
-});
+app.use('/admin',adminRoutes)
+app.use(shopRoutes)
 
-app.post('/product',(req,res)=>{
-    console.log(req.body)
-    res.redirect('/')
+app.use((req,res)=>{
+    res.status(404).sendFile(path.join(__dirname,'views','error404.html'))
 })
-app.use("/", (req, res) => {
-  res.send("<h1>Hello world</h1>");
-});
+
+
+
 
 app.listen(3000, console.log("Server has Started "));
